@@ -108,9 +108,7 @@ export default function Home() {
         announcer.innerHTML =
           '<h1>Player <span class="playerO">O</span> Won</h1>';
         announcer.classList.remove("hide");
-        console.log(getCookie("scoreO"));
-        console.log(typeof getCookie("scoreO"));
-        console.log(isNaN(getCookie("scoreO")));
+        
         setCookie("scoreO", scoreO + 1, 5);
         break;
 
@@ -177,10 +175,10 @@ export default function Home() {
     announcer.classList.add("hide");
   };
   function resetCont() {
-    setCookie("scoreX", "0", 5);
-    setCookie("scoreO", "0", 5);
+    setCookie("scoreX", "0", 0);
+    setCookie("scoreO", "0", 0);
     setscoreX(0);
-    setscoreX(0);
+    setscoreO(0);
   }
   return (
     <div className="Home">

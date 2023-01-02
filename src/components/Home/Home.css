@@ -83,6 +83,7 @@ h1 {
   font-size: 30px;
   margin-bottom: 60px;
   border: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
