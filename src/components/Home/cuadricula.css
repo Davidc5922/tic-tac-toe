@@ -1,0 +1,31 @@
+#tiles0 {
+  border-top: none;
+  border-left: none;
+}
+#tiles1 {
+  border-top: none;
+}
+#tiles2 {
+  border-top: none;
+  border-right: none;
+}
+#tiles3 {
+  border-right: none;
+}
+#tiles5 {
+  border-right: none;
+}
+#tiles8 {
+  border-right: none;
+  border-bottom: none;
+}
+#tiles7 {
+  border-bottom: none;
+}
+#tiles6 {
+  border-left: none;
+  border-bottom: none;
+}
+#tiles3 {
+  border-left: none;
+}
