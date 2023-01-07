@@ -13,6 +13,7 @@ export default function Home() {
   const [scoreO, setscoreO] = useState(
     getCookie("scoreO") == null ? 0 : parseInt(getCookie("scoreO"))
   );
+  const [pc, setpc] = useState(false);
 
   let currentPlayer = "X";
 
@@ -74,6 +75,7 @@ export default function Home() {
     var div = document.getElementById(`tile${tile}`);
     console.log(tile);
     console.log(div);
+
     if (isValidAction(div) && isGameActive == true) {
       div.innerText = currentPlayer;
       div.classList.add(`player${currentPlayer}`);
@@ -82,7 +84,9 @@ export default function Home() {
       currentPlayer = currentPlayer === "X" ? "O" : "X";
 
       changePlayer();
+      return true;
     }
+    return false;
   };
 
   /*  tiles.forEach((tile, index) => {
@@ -108,7 +112,7 @@ export default function Home() {
         announcer.innerHTML =
           '<h1>Player <span class="playerO">O</span> Won</h1>';
         announcer.classList.remove("hide");
-        
+
         setCookie("scoreO", scoreO + 1, 5);
         break;
 
@@ -175,15 +179,39 @@ export default function Home() {
     announcer.classList.add("hide");
   };
   function resetCont() {
+    Resetall();
     setCookie("scoreX", "0", 0);
     setCookie("scoreO", "0", 0);
     setscoreX(0);
     setscoreO(0);
   }
+  const Pcactive = () => {
+    if (pc == false) {
+      for (let i = 0; i <= 8; i++) {
+        let num = Math.floor(Math.random() * 9) + 1 - 1;
+        if (userAction(num)) {
+          console.log(currentPlayer);
+
+          setpc(true);
+          break;
+        } else {
+          continue;
+        }
+      }
+    }
+  };
   return (
     <div className="Home">
       <div>
         <h1>tic tac toe</h1>
+      </div>
+      <div>
+        <input
+          type="radio"
+          onClick={() => {
+            Pcactive();
+          }}
+        />
       </div>
       <div className="container_all">
         <div>

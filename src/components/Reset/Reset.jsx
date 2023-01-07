@@ -1,4 +1,5 @@
 import "./Reset.css";
+import React, { useEffect, useState } from "react";
 
 export default function Reset({ onReset }) {
   return (
